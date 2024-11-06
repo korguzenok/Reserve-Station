@@ -9,6 +9,9 @@
   access:
   - Service
   - Maintenance
+  requirements:
+  - !type:AdminPlaytimeRequirement
+    time: 10
 
 - type: startingGear
   id: ReporterGear
