@@ -13,6 +13,7 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
 using Robust.Shared.Collections;
+using Content.Shared.TTS;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
@@ -83,6 +84,9 @@ namespace Content.Shared.Preferences
         public ProtoId<SpeciesPrototype> Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
         [DataField]
+        public string Voice { get; set; } = "TEST";
+
+        [DataField]
         public int Age { get; set; } = 18;
 
         // #Goobstation - Prefered Borg Name Stuff
@@ -140,6 +144,7 @@ namespace Content.Shared.Preferences
             string flavortext,
             string species,
             string borgname,
+            string voice,
             int age,
             Sex sex,
             Gender gender,
@@ -156,6 +161,7 @@ namespace Content.Shared.Preferences
             FlavorText = flavortext;
             Species = species;
             BorgName = borgname;
+            Voice = voice;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -189,6 +195,7 @@ namespace Content.Shared.Preferences
                 other.Species,
                 // #Goobstation - Borg Preferred Name
                 other.BorgName,
+                other.Voice,
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -279,6 +286,11 @@ namespace Content.Shared.Preferences
                 Species = species,
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
             };
+
+            var voiceId = random.Pick(prototypeManager
+                .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(o => CanHaveVoice(o, sex)).ToArray()
+            ).ID;
         }
 
         public HumanoidCharacterProfile WithName(string name)
@@ -318,6 +330,10 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        public HumanoidCharacterProfile WithVoice(string voice)
+        {
+             return new(this) { Voice = voice };
+        }
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -547,9 +563,11 @@ namespace Content.Shared.Preferences
             {
                 name = Name;
             }
-
             name = name.Trim();
 
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null || !CanHaveVoice(voice, Sex))
+                Voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
 
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
@@ -690,6 +708,12 @@ namespace Content.Shared.Preferences
             }
         }
 
+        public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
+        {
+            return voice.CanSelect && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
+        }
+
+
         /// <summary>
         /// Takes in an IEnumerable of traits and returns a List of the valid traits.
         /// </summary>
@@ -770,12 +794,13 @@ namespace Content.Shared.Preferences
             // #Goobstation - Borg Preferred Name
             hashCode.Add(BorgName);
             hashCode.Add(Species);
+            hashCode.Add(Voice);
             hashCode.Add(Age);
-            hashCode.Add((int) Sex);
-            hashCode.Add((int) Gender);
+            hashCode.Add((int)Sex);
+            hashCode.Add((int)Gender);
             hashCode.Add(Appearance);
-            hashCode.Add((int) SpawnPriority);
-            hashCode.Add((int) PreferenceUnavailable);
+            hashCode.Add((int)SpawnPriority);
+            hashCode.Add((int)PreferenceUnavailable);
             return hashCode.ToHashCode();
         }
 
