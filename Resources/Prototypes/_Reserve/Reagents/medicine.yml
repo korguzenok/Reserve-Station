@@ -12,11 +12,7 @@
       effects:
       - !type:GenericStatusEffect
         key: Stutter
-        component: ScrambledAccent 
-      - !type:GenericStatusEffect 
-        key: Anesthesia
-        component: NoPain
-        time: 15
+        component: ScrambledAccent
       - !type:MovespeedModifier
         walkSpeedModifier: 0.3
         sprintSpeedModifier: 0.3
