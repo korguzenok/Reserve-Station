@@ -118,6 +118,7 @@
       - !type:WashCreamPieReaction
   - type: StatusEffects
     allowed:
+    - Anesthetized
     - Stun
     - KnockedDown
     - SlowedDown

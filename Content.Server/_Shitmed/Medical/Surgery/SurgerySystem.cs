@@ -157,12 +157,12 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     private void OnStepScreamComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        if (HasComp<ForcedSleepingComponent>(args.Body) || _solutionContainerSystem.GetTotalPrototypeQuantity(args.Body, "Propofol") > FixedPoint2.Zero) // || HasComp<NoPainComponent>(args.Body))
+        if (HasComp<ForcedSleepingComponent>(args.Body) || HasComp<NoPainComponent>(args.Body))
             return;
 
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
-        _popup.PopupEntity("Вы чувствуете неумолимую боль!", args.Body, args.Body, PopupType.MediumCaution);
-        _damageable.TryChangeDamage(args.Body, new DamageSpecifier{DamageDict = {{"Asphyxiation", FixedPoint2.New(30)}}});
+        _popup.PopupEntity(Loc.GetString("surgery-unrelenting-pain"), args.Body, args.Body, PopupType.MediumCaution);
+        _ = _damageable.TryChangeDamage(args.Body, new DamageSpecifier { DamageDict = { { "Asphyxiation", FixedPoint2.New(20) } } });
     }
     private void OnStepSpawnComplete(Entity<SurgeryStepSpawnEffectComponent> ent, ref SurgeryStepEvent args) =>
         SpawnAtPosition(ent.Comp.Entity, Transform(args.Body).Coordinates);

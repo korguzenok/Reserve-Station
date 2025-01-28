@@ -1,10 +1,10 @@
 - type: entity
   id: PropofolChemistryBottle
-  suffix: пропофол
+  suffix: propofol
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: пропофол
+    currentLabel: reagent-name-propofol
   - type: SolutionContainerManager
     solutions:
       drink:
