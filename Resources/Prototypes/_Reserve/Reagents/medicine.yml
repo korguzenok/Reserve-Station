@@ -1,0 +1,30 @@
+- type: reagent
+  id: Propofol
+  name: пропофол
+  group: Medicine
+  desc: Снотворное средство внутреннего действия для проведения операций.
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: medicine
+  color: "#f5f5f5"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.1
+      effects:
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: ScrambledAccent 
+      - !type:GenericStatusEffect 
+        key: Anesthesia
+        component: NoPain
+        time: 15
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.3
+        sprintSpeedModifier: 0.3
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 2.5
+        refresh: false
