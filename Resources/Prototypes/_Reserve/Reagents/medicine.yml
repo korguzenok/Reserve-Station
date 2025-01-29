@@ -13,6 +13,7 @@
       - !type:GenericStatusEffect
         key: Anesthetized
         component: NoPain
+        time: 15
       - !type:GenericStatusEffect
         key: Stutter
         component: ScrambledAccent
@@ -25,7 +26,7 @@
           min: 10
         key: Drowsiness
         component: Drowsiness
-        time: 5
+        time: 2.5
         type: Add
         refresh: false
     Narcotic:

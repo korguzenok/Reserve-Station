@@ -100,7 +100,7 @@
       types: {}
   - type: StatusEffects # Overwriting basesimplemob to remove flash, getting flashed as dragon just feelsbad
     allowed:
-    - Anesthetized
+    - Anesthetized # Reserve
     - SlowedDown
     - Stutter
     - Electrocution
