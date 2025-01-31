@@ -52,6 +52,8 @@
       types:
         Asphyxiation: 15
     # Reserve-End
+  - type: Bloodstream
+    bloodReagent: AlienBlood
 
 - type: entity
   parent: BaseSpeciesDummy
