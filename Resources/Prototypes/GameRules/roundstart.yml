@@ -176,13 +176,13 @@
   id: Traitor
   components:
   - type: GameRule
-    minPlayers: 5
+    minPlayers: 9 # Reserve edit, min 9 playes for traitors 
   - type: AntagSelection
     selectionTime: BeforeJobs # Goobstation
     definitions:
     - prefRoles: [ Traitor ]
-      max: 8
-      playerRatio: 10
+      max: 2 # Reserve edit, max 2 traitors per round
+      playerRatio: 10 # Reserve edit, 10 crews to 1 traitor
       blacklist:
         components:
         - AntagImmune
