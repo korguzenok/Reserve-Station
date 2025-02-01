@@ -182,7 +182,7 @@
     definitions:
     - prefRoles: [ Traitor ]
       max: 2 # Reserve edit, max 2 traitors per round
-      playerRatio: 10 # Reserve edit, 10 crews to 1 traitor
+      playerRatio: 12 # Reserve edit, 12 crews to 1 traitor
       blacklist:
         components:
         - AntagImmune
