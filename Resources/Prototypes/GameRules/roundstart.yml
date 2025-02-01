@@ -181,7 +181,7 @@
     selectionTime: BeforeJobs # Goobstation
     definitions:
     - prefRoles: [ Traitor ]
-      max: 2 # Reserve edit, max 2 traitors per round
+      max: 8
       playerRatio: 12 # Reserve edit, 12 crews to 1 traitor
       blacklist:
         components:
