@@ -1,7 +1,7 @@
-using Content.Shared._CorvaxNext.PlantAnalyzer;
+using Content.Shared._Reserve.PlantAnalyzer;
 using JetBrains.Annotations;
 
-namespace Content.Client._CorvaxNext.PlantAnalyzer.UI;
+namespace Content.Client._Reserve.PlantAnalyzer.UI;
 
 [UsedImplicitly]
 public sealed class PlantAnalyzerBoundUserInterface : BoundUserInterface

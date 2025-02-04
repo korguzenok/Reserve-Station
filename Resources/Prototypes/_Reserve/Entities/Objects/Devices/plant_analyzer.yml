@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Objects/Devices/plant_analyzer.rsi
+    sprite: _Reserve/Objects/Devices/plant_analyzer.rsi
     layers:
     - state: plantanalyzer
     - state: unlit
@@ -23,8 +23,8 @@
         type: PlantAnalyzerBoundUserInterface
   - type: PlantAnalyzer
     settings:
-      scanDelay: 5
-      advScanDelay: 10
+      scanDelay: 2.5
+      advScanDelay: 5
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
   - type: Appearance

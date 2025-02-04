@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CorvaxNext.PlantAnalyzer;
+namespace Content.Shared._Reserve.PlantAnalyzer;
 
 [Serializable, NetSerializable]
 public enum PlantAnalyzerUiKey : byte
