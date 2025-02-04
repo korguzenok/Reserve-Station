@@ -19,12 +19,17 @@
   access:
   - CentralCommand
   - Brig
+  - Security
   - External
   - Cryogenics
   - Maintenance
   - Engineering
+  - Atmospherics
   - Medical
+  - Chemistry
   - Research
+  - Cargo
+  - Salvage
   - Command
   - NanotrasenRepresentative
   special:
