@@ -1,10 +1,11 @@
 ﻿using Content.Server.GameTicking;
 using Content.Shared.CombatMode.Pacification;
-using Content.Shared.Corvax.CCCVars;
+using Content.Shared._Reserve.CCCVars;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
+using Content.Shared.Damage.Components;
 
-namespace Content.Server.Corvax.PeacefulRoundEnd;
+namespace Content.Server._Reserve.PeacefulRoundEnd;
 
 public sealed class PeacefulRoundEndSystem : EntitySystem
 {
@@ -27,6 +28,7 @@ public sealed class PeacefulRoundEndSystem : EntitySystem
         {
             if (!session.AttachedEntity.HasValue) continue;
             EnsureComp<PacifiedComponent>(session.AttachedEntity.Value);
+            EnsureComp<GodmodeComponent>(session.AttachedEntity.Value);
         }
     }
 }
