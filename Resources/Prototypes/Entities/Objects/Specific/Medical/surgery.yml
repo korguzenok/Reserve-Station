@@ -438,10 +438,12 @@
           params:
             variation: 0.125
             volume: -5
+  # Reserve-Start, surgeon
   - type: Tag
     tags:
     - SurgeryTool
     - EnergyCautery
+  # Reserve-End, surgeon
 
 - type: entity
   name: energy scalpel
@@ -566,10 +568,12 @@
           params:
             variation: 0.125
             volume: -5
+  # Reserve-Start, surgeon
   - type: Tag
     tags:
     - SurgeryTool
     - AdvancedRetractor
+  # Reserve-End, surgeon
 
 - type: entity
   name: medical multitool

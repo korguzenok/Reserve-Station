@@ -103,7 +103,7 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
-  - Surgeon # Corvax-Next-Surgeon
+  - Surgeon # Reserve, surgeon
 
 - type: department
   id: Security

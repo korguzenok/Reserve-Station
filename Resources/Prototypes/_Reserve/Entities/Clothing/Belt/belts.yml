@@ -5,10 +5,10 @@
   description: Style, shine, everything for the best sabers in the universe.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Belt/white_sheath.rsi
+    sprite: _Reserve/Clothing/Belt/white_sheath.rsi
     state: sheath
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Belt/white_sheath.rsi
+    sprite: _Reserve/Clothing/Belt/white_sheath.rsi
 
 - type: entity
   parent: ClothingBeltSheath
@@ -17,10 +17,10 @@
   description: Practicality, durability, the saber will definitely not end up in your leg.
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Belt/sheriff_sheath.rsi
+    sprite: _Reserve/Clothing/Belt/sheriff_sheath.rsi
     state: sheath
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Belt/sheriff_sheath.rsi
+    sprite: _Reserve/Clothing/Belt/sheriff_sheath.rsi
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -29,9 +29,9 @@
   description: Able to magnetize special surgical instruments made on Medical TechFab. Surgeon's assistant? I have my own little buddy!
   components:
   - type: Sprite
-    sprite: _CorvaxNext/Clothing/Belt/surgical_board.rsi
+    sprite: _Reserve/Clothing/Belt/surgical_board.rsi
   - type: Clothing
-    sprite: _CorvaxNext/Clothing/Belt/surgical_board.rsi
+    sprite: _Reserve/Clothing/Belt/surgical_board.rsi
   - type: Storage
     whitelist:
       tags:
@@ -87,7 +87,7 @@
         whitelist:
           tags:
             - SawElectric
-    sprite: _CorvaxNext/Clothing/Belt/belt_overlay.rsi
+    sprite: _Reserve/Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
 - type: entity

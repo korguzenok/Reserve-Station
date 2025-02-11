@@ -2,6 +2,6 @@
   parent: JobIcon
   id: JobIconSurgeon
   icon:
-    sprite: /Textures/_CorvaxNext/Interface/Misc/job_icons.rsi
+    sprite: /Textures/_Reserve/Interface/Misc/job_icons.rsi
     state: Surgeon
   jobName: job-name-surgeon
