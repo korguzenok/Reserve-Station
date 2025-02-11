@@ -177,9 +177,9 @@
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     storedRotation: 90
     heldPrefix: laser
-  # Reserve-Start, surgeon
   - type: Scalpel
     speed: 1.5
+  # Reserve-Start, surgeon
   - type: Tag
     tags:
     - SurgeryTool
@@ -237,9 +237,9 @@
     endSound:
       path: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
   - type: Hemostat
-  # Reserve-Start, surgeon
   - type: Tweezers
   - type: Tending
+  # Reserve-Start, surgeon
   - type: Tag
     tags:
     - SurgeryTool
