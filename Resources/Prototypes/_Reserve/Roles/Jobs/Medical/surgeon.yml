@@ -27,5 +27,6 @@
     ears: ClothingHeadsetMedical
     belt: ClothingBeltSurgicalBoardFilled
     shoes: ClothingShoesColorWhite
+    id: SurgeonPDA
     mask: ClothingMaskSterile
     gloves: ClothingHandsGlovesNitrile
